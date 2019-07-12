@@ -7,7 +7,6 @@ import static org.mockito.Mockito.when;
 import java.math.BigDecimal;
 
 import org.junit.Before;
-import org.mockito.MockitoAnnotations;
 
 import ci.training.beans.Customer;
 import ci.training.beans.Wallet;
@@ -21,15 +20,10 @@ import cucumber.api.java.en.When;
 
 public class createStepDefinition {
 	
-	private WalletService service;
 	private Customer customer;
 	private Customer createCustomer;
 	private WalletRepoTemp repo = new WalletRepoTemp();
-	
-	@Before
-	public void init(){	
-		service = new WalletServiceImpl(repo);
-	}
+	private WalletService service = new WalletServiceImpl(repo);
 	
 	@Given("^I have a customer$")
 	public void i_have_a_customer() throws Throwable {
