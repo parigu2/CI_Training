@@ -31,7 +31,7 @@ public class createStepDefinition {
 	}
 
 	@When("^I save a new customer \"([^\"]*)\" \"([^\"]*)\" and (\\d+)$")
-	public void i_save_a_new_customer(String name, String phoneNumber, int balance) {
+	public void i_save_a_new_customer(String name, String phoneNumber, int balance) throws Throwable {
 		createCustomer = new Customer(name, phoneNumber, new Wallet(new BigDecimal(balance)));
 		assertThat(repo.save(customer)).isEqualTo(true);
 	}
@@ -41,5 +41,6 @@ public class createStepDefinition {
 		service = new WalletServiceImpl(repo);
 		assertEquals(customer, service.createWallet("AAA", "9850276767", new BigDecimal(400)));
 		assertEquals(customer, createCustomer);
+		service.showBalance("9850276767");
 	}
 }
