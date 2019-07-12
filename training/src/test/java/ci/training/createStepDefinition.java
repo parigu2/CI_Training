@@ -28,7 +28,6 @@ public class createStepDefinition {
 	
 	@Before
 	public void init(){	
-		MockitoAnnotations.initMocks(this);
 		service = new WalletServiceImpl(repo);
 	}
 	
