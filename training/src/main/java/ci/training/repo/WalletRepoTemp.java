@@ -5,11 +5,7 @@ import ci.training.beans.Customer;
 public class WalletRepoTemp implements WalletRepo {
 
 	public boolean save(Customer c) {
-		if (c instanceof Customer) {
-			return true;
-		} else {
-			return false;
-		}
+		return c instanceof Customer;
 	}
 
 	public Customer find(String phoneNumber) {
