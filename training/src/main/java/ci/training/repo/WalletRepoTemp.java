@@ -7,7 +7,7 @@ import ci.training.beans.Customer;
 
 public class WalletRepoTemp implements WalletRepo {
 	
-	public List<Customer> customerDB = new ArrayList<Customer>();
+	private List<Customer> customerDB = new ArrayList<Customer>();
 
 	public boolean save(Customer c) {
 		return customerDB.add(c);
