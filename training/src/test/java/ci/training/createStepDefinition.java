@@ -33,7 +33,6 @@ public class createStepDefinition {
 	@When("^I save a new customer \"([^\"]*)\" \"([^\"]*)\" and (\\d+)$")
 	public void i_save_a_new_customer(String name, String phoneNumber, int balance) throws Throwable {
 		createCustomer = new Customer(name, phoneNumber, new Wallet(new BigDecimal(balance)));
-		assertThat(repo.save(customer)).isEqualTo(true);
 	}
 
 	@Then("^I should get customer$")
