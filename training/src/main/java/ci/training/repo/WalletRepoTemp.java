@@ -5,9 +5,7 @@ import ci.training.beans.Customer;
 public class WalletRepoTemp implements WalletRepo {
 
 	public boolean save(Customer c) {
-		if(c != null) {
-			return true;
-		}
+		if (c instanceof Customer) return true;
 		return false;
 	}
 
